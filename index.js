@@ -1,5 +1,5 @@
 const { Gpio } = require('onoff');
-const pir = new Gpio(17, 'in', 'both');
+const pir = new Gpio(4, 'in', 'both');
 
 pir.watch((err, value) => {
     if (err) {
