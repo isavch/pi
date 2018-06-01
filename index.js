@@ -12,6 +12,8 @@ pir.watch((err, value) => {
         console.log('Motion detected', new Date());
     }
 });
+
+console.log('....Watching')
    
 function exit(err) {
     consoe.log('....Exiting', err.message)
