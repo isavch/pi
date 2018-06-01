@@ -7,6 +7,10 @@ if (!sensor.initialize(11, 3)) {
     process.exit(1);
 }
 
+var readout = sensor.read();
+
+console.log(readout);
+
 sensor.read(11, 3, function(err, temperature, humidity) {
     if (err) {
         console.log('Error!', err.message)
