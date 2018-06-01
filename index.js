@@ -1,12 +1,16 @@
 const { Gpio } = require('onoff');
 const pir = new Gpio(4, 'in', 'both');
 
+console.log('....Starting motion sensor')
+
 pir.watch((err, value) => {
     if (err) {
         return exit(err);
     }
     
-    console.log('Motion detected', value);
+    if (value) {
+        console.log('Motion detected', new Date());
+    }
 });
    
 function exit(err) {
