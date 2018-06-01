@@ -2,7 +2,7 @@ var sensor = require('node-dht-sensor');
 
 console.log('Starting....')
 
-sensor.read(11, 3, function(err, temperature, humidity) {
+sensor.read(11, 2, function(err, temperature, humidity) {
     if (err) {
         console.log('Error!', err.message)
         process.exit();
