@@ -2,7 +2,7 @@ var sensor = require('node-dht-sensor');
 
 console.log('Starting....')
 
-if (!sensor.initialize(11, 3)) {
+if (!sensor.initialize(11, 5)) {
     console.warn('Failed to initialize sensor');
     process.exit(1);
 }
