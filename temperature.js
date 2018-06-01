@@ -2,15 +2,6 @@ var sensor = require('node-dht-sensor');
 
 console.log('Starting....')
 
-if (!sensor.initialize(11, 5)) {
-    console.warn('Failed to initialize sensor');
-    process.exit(1);
-}
-
-var readout = sensor.read();
-
-console.log(readout);
-
 sensor.read(11, 3, function(err, temperature, humidity) {
     if (err) {
         console.log('Error!', err.message)
