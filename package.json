@@ -1,10 +1,16 @@
 {
   "name": "pi",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
+    "start": "npm run build:client && npm run server",
+    "build:client": "webpack -p",
+    "server": "node ./server/app.js",
+    "sensors": "node ./sensors/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +23,41 @@
   },
   "homepage": "https://github.com/isavch/pi#readme",
   "dependencies": {
-    "node-dht-sensor": "0.0.34",
+    "@material-ui/core": "^1.2.0",
+    "@material-ui/icons": "^1.1.0",
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.16.3",
     "onoff": "^3.1.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-localstorage": "^0.4.1",
+    "redux-thunk": "^2.3.0",
     "request": "^2.87.0",
-    "rpi-dht-sensor": "^0.1.1"
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "socket.io-stream": "^0.9.1",
+    "stream-split": "^1.1.0",
+    "styled-components": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "html-webpack-plugin": "^3.2.0",
+    "redux-devtools-extension": "^2.13.2",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.1.4",
+    "workbox-webpack-plugin": "^3.2.0"
   }
 }

@@ -1,0 +1,12 @@
+{
+    "presets": [    ["env", {
+      "targets": {
+        "browsers": [
+          "last 2 Chrome versions",
+          "last 2 iOS versions",
+          "last 2 ChromeAndroid versions"
+        ]
+      }
+    }], "react"],
+    "plugins": ["transform-object-rest-spread", "transform-class-properties"]
+  }

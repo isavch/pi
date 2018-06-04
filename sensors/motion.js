@@ -7,9 +7,15 @@ pir.watch((err, value) => {
     if (err) {
         return exit(err);
     }
-    
+
     if (value) {
-        console.log('Motion detected', new Date());
+        process.send({ 
+            type: 'motion', 
+            payload: { 
+                value, 
+                date: Date.now() 
+            } 
+        });
     }
 });
 
