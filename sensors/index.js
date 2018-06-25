@@ -20,7 +20,7 @@ const takePhoto = ({ width = 640, height = 320 }) => {
     ]);
 };
 
-const streamVideo = ({ width = 640, height = 480, fps = 25, bitrate = 500000 }) => {
+const streamVideo = ({ width = 320, height = 320, fps = 25, bitrate = 500000 }) => {
     return spawn('raspivid', [
         '-n', '-t', '0', '-w', width.toString(), '-h', height.toString(), '-b', bitrate.toString(), '-pf', 'baseline', '-o', '-'
     ]);
