@@ -41,9 +41,7 @@
     "socket.io-client": "^2.1.1",
     "socket.io-stream": "^0.9.1",
     "stream-split": "^1.1.0",
-    "styled-components": "^3.3.2"
-  },
-  "devDependencies": {
+    "styled-components": "^3.3.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
