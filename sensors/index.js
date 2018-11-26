@@ -16,7 +16,7 @@ const handleMessages = msg => socket.emit('sensor', msg);
 
 const takePhoto = ({ width = 640, height = 320 }) => {
     return spawn('raspistill', [
-        '-w', width, '-h', height, '-o', '-'
+        '-w', width, '-h', '-vf', ' -hf', height, '-o', '-'
     ]);
 };
 
@@ -44,7 +44,7 @@ function onTakeVideo(options) {
 function onTakePhoto(options = {}) {
     const { interval = 0 } = options;
     const { stdout } = takePhoto(options);
-    
+
     console.log('photo take...', options);
     socket.emit('photo:start', { length: stdout.readableLength });
     stdout.on('data', data => socket.emit('photo', data));
