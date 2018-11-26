@@ -16,7 +16,7 @@ const handleMessages = msg => socket.emit('sensor', msg);
 
 const takePhoto = ({ width = 640, height = 320 }) => {
     return spawn('raspistill', [
-        '-w', width, '-h', height, '-vf', '-hf', '-o', '-'
+        '-w', width, '-h', height, '-o', '-'
     ]);
 };
 
