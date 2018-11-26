@@ -16,13 +16,13 @@ const handleMessages = msg => socket.emit('sensor', msg);
 
 const takePhoto = ({ width = 640, height = 320 }) => {
     return spawn('raspistill', [
-        '-w', width, '-h', '-vf', '-hf', height, '-o', '-'
+        '-w', width, '-h', height, '-vf', '-hf', '-o', '-'
     ]);
 };
 
 const streamVideo = ({ width = 320, height = 320, fps = 25, bitrate = 500000 }) => {
     return spawn('raspivid', [
-        '-n', '-t', '0', '-w', width.toString(), '-h', height.toString(), '-b', bitrate.toString(), '-pf', 'baseline', '-o', '-'
+        '-n', '-t', '0', '-w', width.toString(), '-h', height.toString(), '-vf', '-hf', '-b', bitrate.toString(), '-pf', 'baseline', '-o', '-'
     ]);
 };
 
