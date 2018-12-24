@@ -1,10 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import {
     BrowserRouter as Router,
-    Route,
-    Link,
-    Redirect,
-    withRouter
+    Route
   } from 'react-router-dom';
 import PrivateRoute from './components/private-route';
 import Login from './components/login';

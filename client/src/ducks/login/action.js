@@ -7,6 +7,7 @@ function login(password) {
         const res = await fetch('/api/login', { headers: { Authorization: btoa(password)} })
 
         if (res.status === 200) {
+            localStorage.setItem('auth', btoa(password))
             return dispatch({
                 type: LOGIN_SUCCESS,
                 payload: btoa(password)

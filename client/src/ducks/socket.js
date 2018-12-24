@@ -5,7 +5,15 @@ import { onSensor } from './temperature/action';
 const SOCKET_URI = 'wss://ivan-pi.herokuapp.com';
 
 export function createSocket() {
-    return io(SOCKET_URI);
+    return io(SOCKET_URI, {
+        transportOptions: {
+            polling: {
+              extraHeaders: {
+                'authorization': localStorage.getItem('auth')
+              }
+            }
+          }
+    });
 }
 
 export function listenSocket(onData) {
