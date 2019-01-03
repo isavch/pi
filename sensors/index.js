@@ -9,7 +9,9 @@ const { spawn } = require('child_process');
 
 const sensors = [
     'temperature.js',
-    'motion.js'
+    'motion.js',
+    'light.js',
+    'sound.js'
 ];
 
 const handleMessages = msg => socket.emit('sensor', msg);
