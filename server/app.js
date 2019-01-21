@@ -18,4 +18,3 @@ const server = express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 ws(server);
-require('./mqtt');
