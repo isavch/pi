@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const ws = require('./ws')
+const ws = require('./ws');
 
 const PORT = process.env.PORT || 3000;
 const SECRET_TOKEN = process.env.SECRET_TOKEN || 'pass@123';
@@ -18,3 +18,4 @@ const server = express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 ws(server);
+require('./mqtt');
